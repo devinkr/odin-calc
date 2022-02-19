@@ -1,0 +1,44 @@
+:root {
+    font-size: calc(16px + (28 - 16) * (100vw - 300px)/(1440 - 300));
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(32, 32, 32);
+}
+
+#calc {
+    background-color: green;
+    margin: 40px auto;
+    width: 20em;
+}
+
+#display {
+    background-color:rgb(125 125 125);
+    text-align: right;
+    padding: .5em;
+    font-size: 2em;
+}
+
+#calcButtons {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.btn {
+    background-color: rgb(63, 63, 63);
+    color: white;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+}
+
+.btn:hover {
+    background-color: rgb(52 97 173);
+}
+
+.clicked {
+    background-color: rgb(32 62 113);
+    transform: scale(1.05);
+}
