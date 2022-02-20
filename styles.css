@@ -50,6 +50,10 @@ body {
     background-color: rgb(32 62 113);
 }
 
+.operatorButtons:active, .equalsButton:active {
+    background-color: rgb(179, 74, 74);
+}
+
 .span2 {
     grid-column: span 2;
 }
