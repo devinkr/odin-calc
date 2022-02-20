@@ -42,6 +42,10 @@ body {
     background-color: rgb(179, 74, 74);
 }
 
+.equalsButton {
+    background-color: #ad750d;
+}
+
 .btn:active {
     background-color: rgb(32 62 113);
 }
