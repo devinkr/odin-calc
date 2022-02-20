@@ -48,12 +48,20 @@ const clickNumber = function(e) {
 }
 
 const clickOperator = function(e) {
+    this.focus();
+    clickEqual();
+    currentValue = display.textContent;
     newNumber = true;
-    console.log(this.textContent);
+    operator = this.textContent;
 }
 
-const clickEqual = function(e) {
-    console.log('EQUALS');
+const clickEqual = function() {
+    if (operator != '') {
+        const total = operate(operator, Number(currentValue), Number(display.textContent));
+        display.textContent = total;
+        currentValue = total;
+        operator = '';
+    }
 }
 
 numberButtons = document.querySelectorAll('.numberButtons');
@@ -65,6 +73,42 @@ operatorButtons.forEach(btn => btn.addEventListener('click', clickOperator))
 equalsButton = document.querySelector('.equalsButton');
 equalsButton.addEventListener('click', clickEqual);
 
-// Break time. Work on operator so I should be able to click 7 + 3 and when I
-// click plus again it updates display to 10 and I can continue without pressing
-// equals. 
+clearButton = document.querySelector('.clearButton');
+clearButton.addEventListener('click', function(e) {
+    currentValue = 0;
+    newNumber = true;
+    operator = '';
+    display.textContent = currentValue;
+});
+
+plusMinus = document.querySelector('.plusMinus');
+plusMinus.addEventListener('click', () => {
+    const num = display.textContent;
+    if (num != 0) {
+        if (num[0] === '-') {
+            display.textContent = num.substring(1);
+        }
+        else {
+            display.textContent = `-${num}`;
+        }
+    }
+});
+
+percentButton = document.querySelector('.percent');
+percentButton.addEventListener('click', () => {
+    display.textContent = Number(display.textContent) / 100;
+})
+
+//Make buttons animate
+
+// function removeTransition(e) {
+//     if (e.propertyName !== 'transform') return;
+//     e.target.classList.remove('clicked');
+//   }
+
+// const btns = Array.from(document.querySelectorAll('.btn'));
+// btns.forEach(btn => btn.addEventListener('click', function(e) {
+//     this.classList.add('clicked');
+    
+// }));
+// btns.forEach(btn => btn.addEventListener('transitionend', removeTransition));

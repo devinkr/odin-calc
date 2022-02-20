@@ -34,11 +34,18 @@ body {
     font-size: 30px;
 }
 
-.btn:hover {
-    background-color: rgb(52 97 173);
+.operatorButtons {
+    background-color: rgb(111 48 48);
 }
 
-.clicked {
+.operatorButtons:focus {
+    background-color: rgb(179, 74, 74);
+}
+
+.btn:active {
     background-color: rgb(32 62 113);
-    transform: scale(1.05);
+}
+
+.span2 {
+    grid-column: span 2;
 }
