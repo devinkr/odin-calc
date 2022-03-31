@@ -98,17 +98,3 @@ percentButton = document.querySelector('.percent');
 percentButton.addEventListener('click', () => {
     display.textContent = Number(display.textContent) / 100;
 })
-
-//Make buttons animate
-
-// function removeTransition(e) {
-//     if (e.propertyName !== 'transform') return;
-//     e.target.classList.remove('clicked');
-//   }
-
-// const btns = Array.from(document.querySelectorAll('.btn'));
-// btns.forEach(btn => btn.addEventListener('click', function(e) {
-//     this.classList.add('clicked');
-    
-// }));
-// btns.forEach(btn => btn.addEventListener('transitionend', removeTransition));
